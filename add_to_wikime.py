@@ -38,8 +38,10 @@ def anime_to_my_format(anime: dict):
 
     average = anime["score"]
 
+    title = rus_title if (rus_title := anime["russian"]) != "" else anime["name"]
+
     ans = {
-        "title": anime["name"],
+        "title": title,
         "originTitle": originTitle,
         "description": description,
         "director": director,
